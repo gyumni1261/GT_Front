@@ -81,6 +81,48 @@
       font-size: 1rem;
       margin-top: 20px;
     }
+
+
+    .modal {
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+
+    .modal:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: calc(100% - 40px);
+      max-width: 500px;
+    }
+
+    .modal-content h4 {
+      margin-bottom: 15px;
+    }
+
+    .modal-content p {
+      margin-bottom: 10px;
+    }
+
+    .modal-content .text-end {
+      margin-top: 20px;
+    }
+
   </style>
 </head>
 
@@ -88,37 +130,34 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-
-        <a class="navbar-brand" href="#">
+    
+        <a class="navbar-brand" href="/html/index.html">
           <img src="/src/image/main-logo.png" alt="Logo" class="d-inline-block align-text-top">
         </a>
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+     
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-
+    
+    
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
-
+    
               <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                 <li><a class="dropdown-item" href="#">Web Development</a></li>
                 <li><a class="dropdown-item" href="#">SEO</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Blog
               </a>
               <ul class="dropdown-menu" aria-labelledby="blogDropdown">
@@ -130,16 +169,64 @@
               <a class="nav-link" href="#">Contact us</a>
             </li>
           </ul>
-
+    
           <!-- Login and Sign Up Buttons -->
           <div class="d-flex">
-            <a href="#" class="btn me-2" style="border-color: #364EF0;">Login</a>
-            <a href="#" class="btn" style="background-color:#364EF0">Sign up</a>
+            <a href="#login-modal" class="btn me-2" style="border-color: #364EF0; color: #364EF0;">Login</a>
+            <a href="#signup-modal" class="btn" style="background-color: #364EF0; color: white;">Sign up</a>
           </div>
         </div>
+    
+      
+      
+    
+    
+    
       </div>
     </nav>
-  </header>
+    
+    
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <h4>로그인</h4>
+        <label for="id" class="form-label">아이디</label>
+        <input type="text" id="id" class="form-control mb-3" placeholder="아이디를 입력하시오."/>
+        <label for="password" class="form-label">비밀번호</label>
+        <input type="password" id="password" class="form-control mb-3" placeholder="비밀번호를 입력하시오."/>
+    
+        <a href="#" class="btn mb-3" style="background-color: #364EF0; color: #fff;">로그인</a>
+        <a href="#" class="btn mb-3" style="background-color: #364EF0; color: #fff;">닫기</a>
+      </div>
+    </div>
+    
+    
+    
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <h4>회원가입</h4>
+    
+        
+        <label for="register-name">이름</label>
+        <input type="text" id="register-name" class="form-control mb-3" placeholder="이름을 입력하시오"/>
+    
+        <label for="register-id">아이디</label>
+        <input type="text" id="register-id" class="form-control mb-3" placeholder="사용할 아이디를 입력하시오." />
+      
+        <label for="register-password">비밀번호</label>
+        <input type="text" id="register-password" class="form-control mb-3" placeholder="영문+숫자 8자리"/>
+    
+        <label for="register-email">이메일</label>
+        <input type="text" id="register-email" class="form-control mb-3" placeholder="xxx@xxxx.com"/>
+    
+    
+        <a href="#" class="btn mb-3" style="background: #364EF0; color: white;">제출하기</a>
+        <a href="#" class="btn mb-3" style="background: #364EF0; color: white;">닫기</a>
+    
+      </div>
+    
+      
+    </div>
+    </header>
   <main>
     <!-- Main Banner -->
     <section class="container my-5 text-center banner-section">
@@ -169,21 +256,21 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/gMaB-fG4u4g/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
                 <p class="video-title">전신 다이어트 최고의 운동 [칼소폭 찐 핵핵매운맛]</p>
               </div>
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/swRNeYw1JkY/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
                 <p class="video-title">하루 15분! 전신 칼로리 불태우는 다이어트 운동</p>
               </div>
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/54tTYO-vU2E/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
@@ -194,21 +281,21 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/QqqZH3j_vH0/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
                 <p class="video-title">상체비만 다이어트 최고의 운동 [상체 핵매운맛]</p>
               </div>
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/tzN6ypk6Sps/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
                 <p class="video-title">하체운동이 중요한 이유? 이것만 보고 따라하자 ! [하체운동 교과서]</p>
               </div>
               <div class="col-md-4">
-                <a href="#">
+                <a href="/html/review_list.html">
                   <img src="https://img.youtube.com/vi/u5OgcZdNbMo/maxresdefault.jpg" class="img-fluid video-thumbnail"
                     alt="video">
                 </a>
@@ -232,7 +319,7 @@
         목록</h3>
       <div class="row">
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/u5OgcZdNbMo/maxresdefault.jpg" alt="video">
               <div class="card-body">
@@ -242,7 +329,7 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/tzN6ypk6Sps/maxresdefault.jpg" alt="video">
               <div class="card-body">
@@ -252,7 +339,7 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/QqqZH3j_vH0/maxresdefault.jpg" alt="video">
               <div class="card-body">
@@ -264,7 +351,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/54tTYO-vU2E/maxresdefault.jpg" alt="video">
               <div class="card-body">
@@ -274,7 +361,7 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/swRNeYw1JkY/maxresdefault.jpg" alt="video">
               <div class="card-body">
@@ -284,7 +371,7 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="#" style="text-decoration: none;">
+          <a href="/html/review_list.html" style="text-decoration: none;">
             <div class="card border-0">
               <img src="https://img.youtube.com/vi/gMaB-fG4u4g/maxresdefault.jpg" alt="video">
               <div class="card-body">
